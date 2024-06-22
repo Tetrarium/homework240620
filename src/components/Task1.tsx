@@ -32,6 +32,10 @@ export default function Task1() {
   useLayoutEffect(() => {
     resize();
     window.addEventListener('resize', resize);
+
+    return () => {
+      window.removeEventListener('resize', resize);
+    };
   }, []);
 
   return (
