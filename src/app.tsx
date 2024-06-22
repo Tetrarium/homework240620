@@ -1,6 +1,6 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 
-import Task1 from "./components/Task1";
+import Task1 from "./Task1";
 
 export const App = () => {
   return (
