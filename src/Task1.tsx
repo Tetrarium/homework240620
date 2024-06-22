@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
 
 const Title = styled.h2`
@@ -32,7 +32,6 @@ const Scalable = styled.div<ScalableProps>((props) => ({
 }));
 
 export default function Task1() {
-  const scalableRef = useRef<HTMLDivElement>(null);
   const [scalableHeight, setScalableHeight] = useState(0);
   const [scalableWidth, setScalableWidth] = useState(0);
 
@@ -59,7 +58,7 @@ export default function Task1() {
         <Description>Создайте компонент, который меняет размер и позицию блока в зависимости от размеров окна браузера ( например так чтобы имел половину ширины экрана  и высоты) . Используйте <code>useLayoutEffect</code> для изменения стилей блока после каждого изменения размера окна</Description>
       </header>
       <Main>
-        <Scalable ref={scalableRef} $width={scalableWidth} $height={scalableHeight} />
+        <Scalable $width={scalableWidth} $height={scalableHeight} />
       </Main>
     </article>
   );
