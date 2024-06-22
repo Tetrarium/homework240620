@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import styled from "styled-components";
 
-import BtnFocusTo from "./BtnFocusTo";
 import Task from "./Task";
 
 const Container = styled.div`
@@ -18,6 +17,12 @@ const Input = styled.input`
   font-size: .8em;
 `;
 
+const Button = styled.button`
+  padding: 2px 10px;
+  font-size: .8em;
+  cursor: pointer;
+`;
+
 export default function Task3() {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -31,9 +36,9 @@ export default function Task3() {
     >
       <Container>
         <Input type="text" ref={inputRef} />
-        <BtnFocusTo element={inputRef.current}>Кнопка 1</BtnFocusTo>
-        <BtnFocusTo element={inputRef.current}>Кнопка 2</BtnFocusTo>
-        <BtnFocusTo element={inputRef.current}>Кнопка 3</BtnFocusTo>
+        <Button type="button" onClick={() => inputRef.current?.focus()}>Кнопка 1</Button>
+        <Button type="button" onClick={() => inputRef.current?.focus()}>Кнопка 2</Button>
+        <Button type="button" onClick={() => inputRef.current?.focus()}>Кнопка 3</Button>
       </Container>
     </Task>
   );
